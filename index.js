@@ -7,8 +7,7 @@ app.use(cors());
 const keys = require('./keys');
 const services = require('./services');
 
-console.log(services.seeder);
-// Services
+require('./routes')(app);
 app.post('/seed_index', services.seeder);
 
 app.listen(keys.PORT, () => {
